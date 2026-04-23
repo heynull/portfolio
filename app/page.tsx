@@ -1,65 +1,321 @@
-import Image from "next/image";
+"use client";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div style={{ maxWidth: "768px", margin: "0 auto", padding: "30px 50px" }}>
+      {/* Header */}
+      <div style={{ marginBottom: "40px" }}>
+        <p style={{ fontSize: "20px", fontWeight: "600", margin: 0 }}>
+          moses ajila
+        </p>
+        <p style={{ color: "#6b7280", fontSize: "20px", margin: 0 }}>
+          product, developer
+        </p>
+      </div>
+
+      {/* Projects */}
+      <div style={{ marginBottom: "40px" }}>
+        <h2
+          style={{
+            fontSize: "14px",
+            letterSpacing: "1px",
+            color: "#6b7280",
+            marginBottom: "16px",
+          }}
+        >
+          PROJECTS
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <div style={{ display: "flex", gap: "3px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.4", fontSize: "16px", fontWeight: "600" }}>
+              currently building at{" "}
+              <a
+                href="https://fiysamenergy.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                @Fiysam Energy
+              </a>
+              : Fiysam Energy Services delivers end-to-end engineering,
+              procurement, and construction solutions for the oil, gas, and
+              power sectors across West Africa.
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+              frontend & product @{" "}
+              <a
+                href="https://pnl-dashboard-opal.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                PNL Dashboard — Risk Monitoring System
+              </a>
+              : A real-time risk monitoring dashboard for tracking profit & loss
+              (PnL), exposure, and trading performance.
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+              frontend{" "}
+              <a
+                href="https://spend-dashboard-x2fs-erxdf5hhn-ajgits-projects.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                @SpendOS
+              </a>
+              : A high-performance spend analytics dashboard inspired by modern
+              fintech tools, built for tracking and analyzing financial data.
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+              research & development{" "}
+              <a
+                href="https://www.linkedin.com/company/kloud6"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                @kloud6
+              </a>
+              : a startup software company specializing in building of custom
+              internal tool.
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+              computer science{" "}
+              <a
+                href="https://funaab.edu.ng"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                @funaab
+              </a>
+            </span>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </div>
+
+      {/* Selected Publications */}
+      <div style={{ marginBottom: "40px" }}>
+        <h2
+          style={{
+            fontSize: "14px",
+            letterSpacing: "1px",
+            color: "#6b7280",
+            marginBottom: "16px",
+          }}
+        >
+          SELECTED PUBLICATIONS
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+              Killed by Google is the Google graveyard; a free and open source
+              list of discontinued Google services, products, devices, and apps
+              -{" "}
+              <a
+                href="https://killedbygoogle.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                Cody Ogden
+              </a>
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+              Brief History of Scaling Uber -{" "}
+              <a
+                href="https://highscalability.com/brief-history-of-scaling-uber/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                Josh Clemm
+              </a>
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+              Everything Paul Graham is a must read -{" "}
+              <a
+                href="https://paulgraham.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "red", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                Paul Graham
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Interests */}
+      <div style={{ marginBottom: "20px" }}>
+        <h2
+          style={{
+            fontSize: "14px",
+            letterSpacing: "1px",
+            color: "#6b7280",
+            marginBottom: "16px",
+          }}
+        >
+          INTERESTS
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+              mobile, desktop development
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+              Low-level, A.I engineering
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ paddingTop: "10px", borderTop: "1px solid #e5e7eb" }}>
+        <p
+          style={{ marginBottom: "10px", lineHeight: "1.6", fontSize: "16px", fontWeight: "400" }}
+        >
+          building products, tennis, reading and writing.
+        </p>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "18px",
+            fontSize: "18px",
+            fontWeight: "600",
+          }}
+        >
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://linkedin.com/in/ajila-moses"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ color: "red", textDecoration: "none" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.textDecoration = "underline")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.textDecoration = "none")
+            }
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            linkedin
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/heynull"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ color: "red", textDecoration: "none" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.textDecoration = "underline")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.textDecoration = "none")
+            }
           >
-            Documentation
+            github
+          </a>
+          <a
+            href="https://twitter.com/ajilamoses"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "red", textDecoration: "none" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.textDecoration = "underline")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.textDecoration = "none")
+            }
+          >
+            x (twitter)
+          </a>
+          <a
+            href="mailto:mosesajila@gmail.com"
+            style={{ color: "red", textDecoration: "none" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.textDecoration = "underline")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.textDecoration = "none")
+            }
+          >
+            mosesajila@gmail.com
           </a>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
