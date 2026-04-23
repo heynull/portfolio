@@ -8,8 +8,5 @@
       "memory": 1024,
       "maxDuration": 30
     }
-  },
-  "env": {
-    "NEXT_PUBLIC_SITE_URL": "@site-url"
   }
 }
