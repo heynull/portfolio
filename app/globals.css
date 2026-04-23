@@ -60,3 +60,34 @@ button, a {
 button:hover, a:hover {
   opacity: 0.7;
 }
+
+/* Desktop font sizes (default) */
+.projects-text,
+.publications-text,
+.interests-text,
+.footer-text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Headers */
+.section-title {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* Mobile font sizes */
+@media (max-width: 768px) {
+  .projects-text,
+  .publications-text,
+  .interests-text,
+  .footer-text {
+    font-size: 23px;
+  }
+  
+  .section-title {
+    font-size: 12px;
+  }
+}
