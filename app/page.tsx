@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <div style={{ maxWidth: "768px", margin: "0 auto", padding: "30px 50px" }}>
+    <div style={{ maxWidth: "768px", margin: "0 auto", padding: "30px 20px" }} className="responsive-padding">
       {/* Header */}
       <div style={{ marginBottom: "40px" }}>
         <p style={{ fontSize: "20px", fontWeight: "600", margin: 0 }}>
@@ -17,7 +17,7 @@ export default function Home() {
       <div style={{ marginBottom: "40px" }}>
         <h2
           style={{
-            fontSize: "14px",
+            fontSize: "clamp(14px, 4vw, 16px)",
             letterSpacing: "1px",
             color: "#6b7280",
             marginBottom: "16px",
@@ -28,7 +28,7 @@ export default function Home() {
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <div style={{ display: "flex", gap: "3px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.4", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.4", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               currently building at{" "}
               <a
                 href="https://fiysamenergy.com"
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.6", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               frontend & product @{" "}
               <a
                 href="https://pnl-dashboard-opal.vercel.app/"
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.6", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               frontend{" "}
               <a
                 href="https://spend-dashboard-x2fs-erxdf5hhn-ajgits-projects.vercel.app/"
@@ -95,7 +95,7 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.6", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               research & development{" "}
               <a
                 href="https://www.linkedin.com/company/kloud6"
@@ -117,7 +117,7 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.6", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.6", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               computer science{" "}
               <a
                 href="https://funaab.edu.ng"
@@ -142,7 +142,7 @@ export default function Home() {
       <div style={{ marginBottom: "40px" }}>
         <h2
           style={{
-            fontSize: "14px",
+            fontSize: "clamp(14px, 4vw, 16px)",
             letterSpacing: "1px",
             color: "#6b7280",
             marginBottom: "16px",
@@ -153,7 +153,7 @@ export default function Home() {
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.3", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               Killed by Google is the Google graveyard; a free and open source
               list of discontinued Google services, products, devices, and apps
               -{" "}
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.3", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               Brief History of Scaling Uber -{" "}
               <a
                 href="https://highscalability.com/brief-history-of-scaling-uber/"
@@ -195,7 +195,7 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.3", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               Everything Paul Graham is a must read -{" "}
               <a
                 href="https://paulgraham.com/"
@@ -220,7 +220,7 @@ export default function Home() {
       <div style={{ marginBottom: "20px" }}>
         <h2
           style={{
-            fontSize: "14px",
+            fontSize: "clamp(14px, 4vw, 16px)",
             letterSpacing: "1px",
             color: "#6b7280",
             marginBottom: "16px",
@@ -231,13 +231,13 @@ export default function Home() {
         <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.3", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               mobile, desktop development
             </span>
           </div>
           <div style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#9ca3af" }}>•</span>
-            <span style={{ lineHeight: "1.3", fontSize: "16px", fontWeight: "600" }}>
+            <span style={{ lineHeight: "1.3", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "600" }}>
               Low-level, A.I engineering
             </span>
           </div>
@@ -247,7 +247,7 @@ export default function Home() {
       {/* Footer */}
       <div style={{ paddingTop: "10px", borderTop: "1px solid #e5e7eb" }}>
         <p
-          style={{ marginBottom: "10px", lineHeight: "1.6", fontSize: "16px", fontWeight: "400" }}
+          style={{ marginBottom: "10px", lineHeight: "1.6", fontSize: "clamp(16px, 5vw, 18px)", fontWeight: "400" }}
         >
           building products, tennis, reading and writing.
         </p>
@@ -256,7 +256,7 @@ export default function Home() {
             display: "flex",
             flexWrap: "wrap",
             gap: "18px",
-            fontSize: "18px",
+            fontSize: "clamp(18px, 5vw, 18px)",
             fontWeight: "600",
           }}
         >

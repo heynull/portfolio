@@ -40,6 +40,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width: 768px) {
+  .responsive-padding {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
 
 @media (min-width: 768px) {
   body {
