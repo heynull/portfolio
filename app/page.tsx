@@ -94,10 +94,10 @@ export default function Home() {
           transform: isMobile ? "none" : "translateY(-50%)",
           display: "flex",
           flexDirection: isMobile ? "row" : "column",
-          gap: isMobile ? "8px" : "20px",
+          gap: isMobile ? "12px" : "24px",
           zIndex: 1000,
           background: isMobile ? "rgba(255,255,255,0.95)" : "transparent",
-          padding: isMobile ? "12px 16px" : "0",
+          padding: isMobile ? "14px 20px" : "0",
           borderRadius: isMobile ? "30px" : "0",
           backdropFilter: isMobile ? "blur(10px)" : "none",
           boxShadow: isMobile ? "0 4px 20px rgba(0,0,0,0.08)" : "none",
@@ -112,11 +112,11 @@ export default function Home() {
               background: "none",
               border: "none",
               cursor: "pointer",
-              fontSize: isMobile ? "10px" : "12px",
-              fontWeight: activeSection === item.id ? "600" : "400",
+              fontSize: isMobile ? "13px" : "15px",
+              fontWeight: activeSection === item.id ? "600" : "600",
               color: activeSection === item.id ? "#f56e59" : "#6b7280",
-              letterSpacing: "1px",
-              padding: isMobile ? "4px 6px" : "4px 0",
+              letterSpacing: "1.5px",
+              padding: isMobile ? "6px 8px" : "6px 0",
               transition: "all 0.3s ease",
               textTransform: "uppercase",
               fontFamily: "'clutch', 'Courier New', monospace",
@@ -139,11 +139,11 @@ export default function Home() {
               <span
                 style={{
                   position: "absolute",
-                  right: "-16px",
+                  right: "-18px",
                   top: "50%",
                   transform: "translateY(-50%)",
-                  width: "6px",
-                  height: "6px",
+                  width: "8px",
+                  height: "8px",
                   backgroundColor: "#f56e59",
                   borderRadius: "50%",
                 }}
@@ -170,7 +170,7 @@ export default function Home() {
           <h2 className="section-title">WORK</h2>
           <div style={{ 
             display: "grid", 
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
             gap: "20px",
           }}>
             {workItems.map((item) => (
@@ -211,7 +211,7 @@ export default function Home() {
                 <div
                   style={{
                     width: "100%",
-                    height: "160px",
+                    height: isMobile ? "200px" : "160px",
                     backgroundColor: "#f3f4f6",
                     borderRadius: "6px",
                     display: "flex",
@@ -245,7 +245,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       style={{
                         ...linkStyle,
-                        fontSize: "16px",
+                        fontSize: isMobile ? "18px" : "16px",
                         fontWeight: "500",
                       }}
                       onClick={(e) => e.stopPropagation()}
@@ -253,7 +253,7 @@ export default function Home() {
                       {item.title}
                     </a>
                   ) : (
-                    <span style={{ fontSize: "16px", fontWeight: "500" }}>
+                    <span style={{ fontSize: isMobile ? "18px" : "16px", fontWeight: "500" }}>
                       {item.title}
                     </span>
                   )}
@@ -261,7 +261,7 @@ export default function Home() {
 
                 {/* Description */}
                 {item.description && (
-                  <span className="projects-text" style={{ color: "#6b7280", fontSize: "14px" }}>
+                  <span className="projects-text" style={{ color: "#6b7280", fontSize: isMobile ? "16px" : "14px" }}>
                     {item.description}
                   </span>
                 )}
