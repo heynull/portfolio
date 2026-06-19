@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("");
-  const [isMobile, setIsMobile] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const linkStyle = {
     color: "#f56e59",
@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
 
   // Scroll to section
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
