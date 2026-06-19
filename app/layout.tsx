@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "moses | product, developer",
+  title: "moses - product, developer",
   description: "product engineer and thinker working on software tools",
-  metadataBase: new URL('https://heymoses.com'),
+  metadataBase: new URL('https://heymoses.vercel.com'),
   openGraph: {
     title: "moses ajila",
     description: "product, engineer",
@@ -33,7 +33,7 @@ export default function RootLayout({
       lang="en"
       className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

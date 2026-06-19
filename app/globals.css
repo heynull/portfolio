@@ -3,27 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'clutch';
-  src: url('https://cdn.prod.website-files.com/676f335bcfea18e1867df091/67705ea2a605470c8cef65de_relative-mono10pitch.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'clutch';
-  src: url('https://cdn.prod.website-files.com/676f335bcfea18e1867df091/67705ea2a605470c8cef65de_relative-mono10pitch.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'clutch';
-  src: url('https://cdn.prod.website-files.com/676f335bcfea18e1867df091/67705ea2a605470c8cef65de_relative-mono10pitch.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: clutch;
+    src: url(https://cdn.prod.website-files.com/676f335…/67705ea…_relative-mono10pitch.otf) format("opentype");
+    font-weight: 400, 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -33,9 +17,9 @@
 body {
   font-family: 'clutch', 'Courier New', monospace;
   background-color: #fafafa;
-  color: #111111;
+  color: #000000;
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 1.2rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -66,15 +50,16 @@ button:hover, a:hover {
 .publications-text,
 .interests-text,
 .footer-text {
-  font-size: 16px;
+  font-size: 0.99rem;
   line-height: 1.6;
+  font-weight: 600;
 }
 
 /* Headers */
 .section-title {
   font-size: 14px;
   letter-spacing: 1px;
-  color: #6b7280;
+  color: #000000;
   margin-bottom: 16px;
 }
 
@@ -84,10 +69,10 @@ button:hover, a:hover {
   .publications-text,
   .interests-text,
   .footer-text {
-    font-size: 23px;
+    font-size: 1rem;
   }
   
   .section-title {
-    font-size: 12px;
+    font-size: 1rem;
   }
 }
