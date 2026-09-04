@@ -1,21 +1,49 @@
-export interface Project {
-  id: string | number;
+export interface WorkEntry {
   title: string;
-  category: string;
+  description: string;
+  website?: string;
+}
+
+export interface Project {
+  title: string;
   description?: string;
-  imageUrl?: string;
+  image?: string;
+  imageAlt?: string;
+  githubUrl?: string;
+  websiteUrl?: string;
 }
 
-export interface SocialLink {
-  name: string;
+export interface NavigationItem {
+  id: string;
+  label: string;
+}
+
+export interface Experience {
+  title: string;
+  type: string;
+  date?: string;
+  organization?: string;
+  description: string;
+  image?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  externalUrl?: string;
+}
+
+export interface RecommendedReading {
+  title: string;
+  author: string;
   url: string;
-  icon?: string;
 }
 
-export interface PersonalInfo {
-  name: string;
-  role: string;
-  bio: string;
-  email: string;
-  projectCount: number;
+export interface WritingEntry {
+  title: string;
+  slug: string;
+  date: string;
+  topic?: string;
+  excerpt: string;
+  body: string;
 }

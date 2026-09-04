@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "moses - product, developer",
-  description: "product engineer and thinker working on software tools",
-  metadataBase: new URL('https://heymoses.vercel.com'),
+  title: "Moses Ajila — Product Developer",
+  description: "Portfolio of Moses Ajila, product developer.",
+  metadataBase: new URL("https://heymoses.vercel.com"),
   openGraph: {
-    title: "moses ajila",
-    description: "product, engineer",
+    title: "Moses Ajila — Product Developer",
+    description: "Portfolio of Moses Ajila, product developer.",
     type: "website",
     locale: "en_US",
   },

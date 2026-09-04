@@ -4,9 +4,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['clutch', 'Courier New', 'monospace'],
-        sans: ['clutch', 'Courier New', 'monospace'],
-        serif: ['clutch', 'Courier New', 'monospace'],
+        mono: ['Courier New', 'Courier', 'ui-monospace', 'monospace'],
+        sans: ['Courier New', 'Courier', 'ui-monospace', 'monospace'],
+        serif: ['Courier New', 'Courier', 'ui-monospace', 'monospace'],
       },
       colors: {
         background: '#fafafa',
