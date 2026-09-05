@@ -285,9 +285,9 @@ main {
 .project__media {
   position: relative;
   overflow: hidden;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   background: rgba(23, 23, 20, 0.04);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
 }
 
 .project__media img {
@@ -298,31 +298,74 @@ main {
   transition: filter 220ms ease, transform 300ms ease;
 }
 
-.project:hover .project__media img {
-  filter: saturate(1);
-  transform: scale(1.012);
-}
-
 .project__body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.project__heading {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .project__body p {
-  margin: 0.7rem 0 0;
+  max-width: 58ch;
+  margin: 0.65rem 0 0;
   color: var(--muted);
   font-size: var(--text-sm);
+  line-height: 1.65;
 }
 
 .project__links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  padding-top: 0.9rem;
-  font-size: var(--text-sm);
-  font-weight: 600;
+  flex: 0 0 auto;
+  gap: 0.25rem;
+}
+
+.project__link {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  color: var(--ink);
+  border-radius: 999px;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project__link svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 1.75;
+}
+
+.project__link--unavailable {
+  color: color-mix(in srgb, var(--muted) 48%, transparent);
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project:hover .project__media img {
+    filter: saturate(1);
+    transform: scale(1.012);
+  }
+
+  a.project__link:hover {
+    color: var(--paper);
+    background: var(--ink);
+  }
+}
+
+a.project__link:active {
+  transform: scale(0.96);
 }
 
 .experience-list > li {
