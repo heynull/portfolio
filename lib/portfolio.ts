@@ -49,7 +49,49 @@ export const projects: Project[] = [
   },
 ];
 
-export const experiences: Experience[] = [];
+export const experiences: Experience[] = [
+  {
+    title: "GenZTechies Alumni & Ambassador",
+    type: "Community",
+    organization: "GenZTechies",
+    description:
+      "An alumnus and ambassador of GenZTechies, contributing to a community that connects young African builders, designers, founders, and technologists through events, learning, and shared opportunities.",
+    image: {
+      src: "/images/experiences/genztechies-community.webp",
+      alt: "HackFest 2023 attendees seated together at the event",
+      width: 1440,
+      height: 960,
+    },
+  },
+  {
+    title: "Supporting Gen Z HackFest — 2022 & 2023",
+    type: "Community Event",
+    date: "2022–2023",
+    organization: "GenZTechies",
+    description:
+      "Supported the Gen Z HackFest community events in 2022 and 2023, helping bring together young people in technology for hackathons, talks, collaboration, and in-person community experiences.",
+    image: {
+      src: "/images/experiences/genz-hackfest.webp",
+      alt: "Large group of HackFest attendees posing for a photograph",
+      width: 1440,
+      height: 960,
+    },
+  },
+  {
+    title: "Paystack Office Tour with GenZTechies",
+    type: "Office Tour",
+    date: "2022",
+    organization: "GenZTechies × Paystack",
+    description:
+      "Joined the GenZTechies community for a visit to Paystack’s Lagos office, getting a closer look at the people, operations, and product environment behind one of Africa’s leading payments companies.",
+    image: {
+      src: "/images/experiences/paystack-office-tour.webp",
+      alt: "Group posing beneath the Paystack sign inside the Lagos office",
+      width: 1440,
+      height: 960,
+    },
+  },
+];
 
 export const recommendedReading: RecommendedReading[] = [
   {

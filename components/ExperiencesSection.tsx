@@ -13,35 +13,36 @@ export function ExperiencesSection({ entries }: { entries: Experience[] }) {
       </header>
 
       <ol className="experience-list">
-          {entries.map((entry) => (
-            <li key={entry.title}>
-              <article className="experience">
-                {entry.image && (
-                  <Image
-                    src={entry.image.src}
-                    alt={entry.image.alt}
-                    width={entry.image.width}
-                    height={entry.image.height}
-                  />
-                )}
-                <div>
-                  <p className="experience__meta">
-                    <span>{entry.type}</span>
-                    {entry.date && <time>{entry.date}</time>}
-                  </p>
-                  <h3>
-                    {entry.externalUrl ? (
-                      <a href={entry.externalUrl} target="_blank" rel="noopener noreferrer">
-                        {entry.title} <span aria-hidden="true">↗</span>
-                      </a>
-                    ) : entry.title}
-                  </h3>
-                  {entry.organization && <p className="experience__place">{entry.organization}</p>}
-                  <p>{entry.description}</p>
-                </div>
-              </article>
-            </li>
-          ))}
+        {entries.map((entry) => (
+          <li key={entry.title}>
+            <article className="experience">
+              {entry.image && (
+                <Image
+                  src={entry.image.src}
+                  alt={entry.image.alt}
+                  width={entry.image.width}
+                  height={entry.image.height}
+                  sizes="(max-width: 599px) calc(100vw - 2.3rem), 17rem"
+                />
+              )}
+              <div className="experience__body">
+                <p className="experience__meta">
+                  <span>{entry.type}</span>
+                  {entry.date && <time>{entry.date}</time>}
+                </p>
+                <h3>
+                  {entry.externalUrl ? (
+                    <a href={entry.externalUrl} target="_blank" rel="noopener noreferrer">
+                      {entry.title} <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : entry.title}
+                </h3>
+                {entry.organization && <p className="experience__place">{entry.organization}</p>}
+                <p>{entry.description}</p>
+              </div>
+            </article>
+          </li>
+        ))}
       </ol>
     </section>
   );
