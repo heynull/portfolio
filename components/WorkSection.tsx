@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { WorkEntry } from "@/types";
 
 export function WorkSection({ entries }: { entries: WorkEntry[] }) {
@@ -14,13 +15,25 @@ export function WorkSection({ entries }: { entries: WorkEntry[] }) {
       <div className="work-list">
         {entries.map((entry) => (
           <article className="work-entry" key={entry.title}>
-            <h3>{entry.title}</h3>
-            <p>{entry.description}</p>
-            {entry.website && (
-              <a className="arrow-link" href={entry.website} target="_blank" rel="noopener noreferrer">
-                Visit website <span aria-hidden="true">↗</span>
-              </a>
+            {entry.image && entry.imageAlt && (
+              <div className="work-entry__media">
+                <Image
+                  src={entry.image}
+                  alt={entry.imageAlt}
+                  fill
+                  sizes="(max-width: 599px) calc(100vw - 2.5rem), 25rem"
+                />
+              </div>
             )}
+            <div className="work-entry__body">
+              <h3>{entry.title}</h3>
+              <p>{entry.description}</p>
+              {entry.website && (
+                <a className="arrow-link" href={entry.website} target="_blank" rel="noopener noreferrer">
+                  Visit website <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
           </article>
         ))}
       </div>

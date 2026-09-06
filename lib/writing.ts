@@ -52,6 +52,8 @@ function parseFrontmatter(source: string, fileName: string): WritingEntry {
     slug,
     date: attributes.date,
     topic: attributes.topic || undefined,
+    image: attributes.image || undefined,
+    imageAlt: attributes.imageAlt || undefined,
     excerpt: attributes.excerpt,
     body: normalized.slice(end + 5).trim(),
   };

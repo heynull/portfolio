@@ -10,6 +10,8 @@ title: Article title
 slug: article-slug
 date: YYYY-MM-DD
 topic: Optional topic
+image: Optional path beneath public, such as /images/writing/article-cover.webp
+imageAlt: Required descriptive alt text when image is present
 excerpt: A short homepage summary
 ---
 ```

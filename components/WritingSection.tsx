@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { WritingEntry } from "@/types";
 
@@ -16,6 +17,16 @@ export function WritingSection({ entries }: { entries: WritingEntry[] }) {
           {entries.map((entry, index) => (
             <li key={entry.slug}>
               <Link href={`/writing/${entry.slug}`}>
+                {entry.image && entry.imageAlt && (
+                  <span className="writing-list__media">
+                    <Image
+                      src={entry.image}
+                      alt={entry.imageAlt}
+                      fill
+                      sizes="(max-width: 599px) calc(100vw - 4rem), 38rem"
+                    />
+                  </span>
+                )}
                 <span className="writing-list__number">{String(index + 1).padStart(2, "0")}</span>
                 <span className="writing-list__title">{entry.title}</span>
                 <span className="writing-list__meta">

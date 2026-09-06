@@ -11,6 +11,8 @@ export const work: WorkEntry[] = [
     description:
       "Fiysam Energy Services delivers end-to-end engineering, procurement, and construction solutions for the oil, gas, and power sectors across West Africa.",
     website: "https://fiysamenergy.com",
+    image: "/images/projects/fiysam-energy.webp",
+    imageAlt: "Fiysam Energy website homepage",
   },
 ];
 

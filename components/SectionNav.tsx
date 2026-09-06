@@ -7,6 +7,13 @@ export function SectionNav({ items }: { items: NavigationItem[] }) {
   const [activeSection, setActiveSection] = useState<string>(items[0].id);
 
   useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (items.some((item) => item.id === hash)) {
+        setActiveSection(hash);
+      }
+    };
+
     const handleScroll = () => {
       const marker = window.scrollY + Math.min(window.innerHeight * 0.3, 220);
       let current: string = items[0].id;
@@ -29,8 +36,15 @@ export function SectionNav({ items }: { items: NavigationItem[] }) {
     };
 
     handleScroll();
+    handleHashChange();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scrollend", handleScroll);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scrollend", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, [items]);
 
   return (
@@ -42,6 +56,7 @@ export function SectionNav({ items }: { items: NavigationItem[] }) {
               className="section-nav__link"
               href={`#${item.id}`}
               aria-current={activeSection === item.id ? "location" : undefined}
+              onClick={() => setActiveSection(item.id)}
             >
               <span>{item.label}</span>
               <span className="section-nav__marker" aria-hidden="true" />

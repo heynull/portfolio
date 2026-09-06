@@ -2,6 +2,8 @@ export interface WorkEntry {
   title: string;
   description: string;
   website?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface Project {
@@ -44,6 +46,8 @@ export interface WritingEntry {
   slug: string;
   date: string;
   topic?: string;
+  image?: string;
+  imageAlt?: string;
   excerpt: string;
   body: string;
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
@@ -45,6 +46,17 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <h1>{entry.title}</h1>
           <time dateTime={entry.date}>{entry.date}</time>
         </header>
+        {entry.image && entry.imageAlt && (
+          <div className="article-cover">
+            <Image
+              src={entry.image}
+              alt={entry.imageAlt}
+              fill
+              sizes="(max-width: 767px) calc(100vw - 2.5rem), 44rem"
+              priority
+            />
+          </div>
+        )}
         <div className="article-body">
           <Markdown>{entry.body}</Markdown>
         </div>
