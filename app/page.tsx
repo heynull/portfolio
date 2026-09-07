@@ -12,20 +12,18 @@ import {
   work,
 } from "@/lib/portfolio";
 import { getWritingEntries } from "@/lib/writing";
-import type { NavigationItem } from "@/types";
+import { getPortfolioNavigation } from "@/lib/navigation";
+
+const HOMEPAGE_PROJECT_LIMIT = 6;
+const HOMEPAGE_EXPERIENCE_LIMIT = 5;
+const HOMEPAGE_WRITING_LIMIT = 3;
 
 export default function Home() {
   const writing = getWritingEntries();
-  const navigation: NavigationItem[] = [
-    { id: "work", label: "Work" },
-    { id: "projects", label: "Projects" },
-    ...(experiences.length > 0
-      ? [{ id: "experiences", label: "Experiences" }]
-      : []),
-    ...(writing.length > 0 ? [{ id: "writing", label: "Writing" }] : []),
-    { id: "reading", label: "Reading" },
-    { id: "contact", label: "Contact" },
-  ];
+  const navigation = getPortfolioNavigation({
+    hasExperiences: experiences.length > 0,
+    hasWriting: writing.length > 0,
+  });
 
   return (
     <>
@@ -40,9 +38,22 @@ export default function Home() {
         </header>
 
         <WorkSection entries={work} />
-        <ProjectsSection entries={projects} />
-        {experiences.length > 0 && <ExperiencesSection entries={experiences} />}
-        {writing.length > 0 && <WritingSection entries={writing} />}
+        <ProjectsSection
+          entries={projects.slice(0, HOMEPAGE_PROJECT_LIMIT)}
+          archiveHref={projects.length > HOMEPAGE_PROJECT_LIMIT ? "/projects" : undefined}
+        />
+        {experiences.length > 0 && (
+          <ExperiencesSection
+            entries={experiences.slice(0, HOMEPAGE_EXPERIENCE_LIMIT)}
+            archiveHref={experiences.length > HOMEPAGE_EXPERIENCE_LIMIT ? "/experiences" : undefined}
+          />
+        )}
+        {writing.length > 0 && (
+          <WritingSection
+            entries={writing.slice(0, HOMEPAGE_WRITING_LIMIT)}
+            archiveHref={writing.length > HOMEPAGE_WRITING_LIMIT ? "/writing" : undefined}
+          />
+        )}
         <ReadingSection entries={recommendedReading} />
       </main>
 

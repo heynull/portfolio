@@ -3,10 +3,22 @@
 import { useEffect, useState } from "react";
 import type { NavigationItem } from "@/types";
 
-export function SectionNav({ items }: { items: NavigationItem[] }) {
-  const [activeSection, setActiveSection] = useState<string>(items[0].id);
+export function SectionNav({
+  items,
+  linkToHome = false,
+}: {
+  items: NavigationItem[];
+  linkToHome?: boolean;
+}) {
+  const [activeSection, setActiveSection] = useState<string | undefined>(
+    linkToHome ? undefined : items[0]?.id,
+  );
 
   useEffect(() => {
+    if (linkToHome || items.length === 0) {
+      return;
+    }
+
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
       if (items.some((item) => item.id === hash)) {
@@ -45,7 +57,7 @@ export function SectionNav({ items }: { items: NavigationItem[] }) {
       window.removeEventListener("scrollend", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [items]);
+  }, [items, linkToHome]);
 
   return (
     <nav className="section-nav" aria-label="Portfolio sections">
@@ -54,9 +66,11 @@ export function SectionNav({ items }: { items: NavigationItem[] }) {
           <li key={item.id}>
             <a
               className="section-nav__link"
-              href={`#${item.id}`}
+              href={`${linkToHome ? "/" : ""}#${item.id}`}
               aria-current={activeSection === item.id ? "location" : undefined}
-              onClick={() => setActiveSection(item.id)}
+              onClick={() => {
+                if (!linkToHome) setActiveSection(item.id);
+              }}
             >
               <span>{item.label}</span>
               <span className="section-nav__marker" aria-hidden="true" />

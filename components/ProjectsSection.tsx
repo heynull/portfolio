@@ -10,7 +10,71 @@ function GitHubMark() {
   );
 }
 
-export function ProjectsSection({ entries }: { entries: Project[] }) {
+export function ProjectsList({ entries }: { entries: Project[] }) {
+  return (
+    <div className="project-grid">
+      {entries.map((project) => (
+        <article className="project" key={project.title}>
+          {project.image && project.imageAlt !== undefined && project.websiteUrl && (
+            <a
+              className="project__media interactive-media"
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit the ${project.title} live website`}
+            >
+              <Image
+                src={project.image}
+                alt={project.imageAlt}
+                fill
+                sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1199px) 40vw, 34rem"
+              />
+            </a>
+          )}
+          <div className="project__body">
+            <div className="project__heading">
+              <h3>{project.title}</h3>
+              <ul className="project__links" aria-label={`${project.title} links`}>
+                <li>
+                  <span
+                    className="project__link project__link--unavailable"
+                    aria-label="GitHub repository link is not currently published"
+                    title="GitHub repository link is not currently published"
+                  >
+                    <GitHubMark />
+                  </span>
+                </li>
+                {project.websiteUrl && (
+                  <li>
+                    <a
+                      className="project__link"
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit the ${project.title} live website`}
+                      title="Visit live website"
+                    >
+                      <ExternalLink aria-hidden="true" />
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </div>
+            {project.description && <p>{project.description}</p>}
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export function ProjectsSection({
+  entries,
+  archiveHref,
+}: {
+  entries: Project[];
+  archiveHref?: string;
+}) {
   return (
     <section id="projects" className="section" aria-labelledby="projects-heading">
       <header className="section-heading">
@@ -21,53 +85,8 @@ export function ProjectsSection({ entries }: { entries: Project[] }) {
         </div>
       </header>
 
-      <div className="project-grid">
-        {entries.map((project) => (
-          <article className="project" key={project.title}>
-            {project.image && project.imageAlt !== undefined && (
-              <div className="project__media">
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  fill
-                  sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1199px) 40vw, 34rem"
-                />
-              </div>
-            )}
-            <div className="project__body">
-              <div className="project__heading">
-                <h3>{project.title}</h3>
-                <ul className="project__links" aria-label={`${project.title} links`}>
-                  <li>
-                    <span
-                      className="project__link project__link--unavailable"
-                      aria-label="GitHub repository link is not currently published"
-                      title="GitHub repository link is not currently published"
-                    >
-                      <GitHubMark />
-                    </span>
-                  </li>
-                  {project.websiteUrl && (
-                    <li>
-                      <a
-                        className="project__link"
-                        href={project.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Visit the ${project.title} live website`}
-                        title="Visit live website"
-                      >
-                        <ExternalLink aria-hidden="true" />
-                      </a>
-                    </li>
-                  )}
-                </ul>
-              </div>
-              {project.description && <p>{project.description}</p>}
-            </div>
-          </article>
-        ))}
-      </div>
+      <ProjectsList entries={entries} />
+      {archiveHref && <a className="archive-link" href={archiveHref}>View all projects →</a>}
     </section>
   );
 }

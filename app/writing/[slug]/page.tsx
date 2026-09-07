@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
+import { SectionNav } from "@/components/SectionNav";
+import { experiences } from "@/lib/portfolio";
+import { getPortfolioNavigation } from "@/lib/navigation";
 import { getWritingEntries, getWritingEntry } from "@/lib/writing";
 
 interface ArticlePageProps {
@@ -37,10 +40,18 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     notFound();
   }
 
+  const navigation = getPortfolioNavigation({
+    hasExperiences: experiences.length > 0,
+    hasWriting: getWritingEntries().length > 0,
+  });
+
   return (
-    <main className="article-shell">
-      <Link className="article-back" href="/#writing">← All writing</Link>
-      <article>
+    <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <SectionNav items={navigation} linkToHome />
+      <main id="main-content" className="article-shell" tabIndex={-1}>
+        <Link className="article-back" href="/writing">← All writing</Link>
+        <article>
         <header className="article-header">
           <p className="eyebrow">{entry.topic ?? "Writing"}</p>
           <h1>{entry.title}</h1>
@@ -60,7 +71,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <div className="article-body">
           <Markdown>{entry.body}</Markdown>
         </div>
-      </article>
-    </main>
+        </article>
+      </main>
+    </>
   );
 }

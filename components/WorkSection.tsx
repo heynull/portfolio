@@ -16,14 +16,35 @@ export function WorkSection({ entries }: { entries: WorkEntry[] }) {
         {entries.map((entry) => (
           <article className="work-entry" key={entry.title}>
             {entry.image && entry.imageAlt && (
-              <div className="work-entry__media">
-                <Image
-                  src={entry.image}
-                  alt={entry.imageAlt}
-                  fill
-                  sizes="(max-width: 599px) calc(100vw - 2.5rem), 25rem"
-                />
-              </div>
+              entry.website ? (
+                <a
+                  className="work-entry__media interactive-media"
+                  href={entry.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit the ${entry.title} website`}
+                >
+                  <Image
+                    src={entry.image}
+                    alt={entry.imageAlt}
+                    fill
+                    preload
+                    unoptimized
+                    sizes="(max-width: 599px) calc(100vw - 2.5rem), 25rem"
+                  />
+                </a>
+              ) : (
+                <div className="work-entry__media">
+                  <Image
+                    src={entry.image}
+                    alt={entry.imageAlt}
+                    fill
+                    preload
+                    unoptimized
+                    sizes="(max-width: 599px) calc(100vw - 2.5rem), 25rem"
+                  />
+                </div>
+              )
             )}
             <div className="work-entry__body">
               <h3>{entry.title}</h3>
